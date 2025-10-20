@@ -10,7 +10,8 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url = uri("https://maven.google.com") }
     }
 }
 rootProject.name = "Compose TV"
-include ':app'
+include(":app")

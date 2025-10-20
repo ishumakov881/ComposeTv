@@ -16,48 +16,35 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun HomeItemBody(item: TvItem) {
-    Box(
+    Column(
         modifier = Modifier
-            .fillMaxSize()
-            .background(
-                brush = Brush.linearGradient(
-                    colors = listOf(
-                        Color.Black.copy(alpha = 0.7f),
-                        Color.Transparent
-                    )
-                )
-            ), contentAlignment = Alignment.TopStart
+            .padding(16.dp)
+            .width(500.dp)
+            .wrapContentHeight()
+            .padding(16.dp)
     ) {
-        Column(
-            modifier = Modifier
-                .padding(16.dp)
-                .width(500.dp)
-                .wrapContentHeight()
-                .padding(16.dp)
-        ) {
+        Text(
+            text = item.title, fontSize = 32.sp, color = Color.White
+        )
+        Spacer(modifier = Modifier.height(12.dp))
+        Text(
+            text = item.description,
+            fontSize = 16.sp,
+            maxLines = 3,
+            overflow = TextOverflow.Ellipsis,
+            color = Color.White
+        )
+        Spacer(modifier = Modifier.height(12.dp))
+        Row {
             Text(
-                text = item.title, fontSize = 32.sp, color = Color.White
+                text = stringResource(id = R.string.label_watch_on),
+                fontSize = 14.sp,
+                color = Color.White,
+                fontWeight = FontWeight.Bold
             )
-            Spacer(modifier = Modifier.height(12.dp))
             Text(
-                text = item.description,
-                fontSize = 16.sp,
-                maxLines = 3,
-                overflow = TextOverflow.Ellipsis,
-                color = Color.White
+                text = item.watchOn, fontSize = 14.sp, color = Color.White
             )
-            Spacer(modifier = Modifier.height(12.dp))
-            Row {
-                Text(
-                    text = stringResource(id = R.string.label_watch_on),
-                    fontSize = 14.sp,
-                    color = Color.White,
-                    fontWeight = FontWeight.Bold
-                )
-                Text(
-                    text = item.watchOn, fontSize = 14.sp, color = Color.White
-                )
-            }
         }
     }
 }
