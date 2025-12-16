@@ -15,9 +15,10 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            HomeCarousel(
-                modifier = Modifier.fillMaxSize()
-            )
+//            HomeCarousel(
+//                modifier = Modifier.fillMaxSize()
+//            )
+            FocusTester()
         }
     }
 }
