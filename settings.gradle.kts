@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Compose TV"
 include(":app")
+include(":lib")
